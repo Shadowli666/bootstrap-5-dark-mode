@@ -193,6 +193,49 @@
 
 [data-theme="dark"] .progress { background-color: #333; }
 
+/* FORMS */
+
+[data-theme="dark"] .form-control::-webkit-input-placeholder,
+[data-theme="dark"] .form-control::-moz-placeholder,
+[data-theme="dark"] .form-control::placeholder { color: #ccc; }
+
+[data-theme="dark"] .form-control-plaintext { color: #ccc; }
+
+[data-theme="dark"] .form-control { color: #fff; background-color: #333; border: 1px solid #111; }
+
+
+[data-theme="dark"] .form-select {
+  color: #fff;
+  border-color: #111 !important;
+  background: #333 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23ffffff' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px;
+  border: 1px solid #111;
+}
+
+
+[data-theme="dark"] .form-select:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem #dc3545;
+  background-color: rgba(255,0,0,0.1);
+}
+
+[data-theme="dark"] .form-select:focus::-ms-value {
+  color: #495057;
+  background-color: #fff;
+}
+
+[data-theme="dark"] .form-select option {
+	color: #000;
+}
+
+[data-theme="dark"] .form-select:disabled {
+  color: #6c757d;
+  background-color: #e9ecef;
+}
+
+[data-theme="dark"] .form-select:-moz-focusring {
+  text-shadow: 0 0 0 #495057;
+}
+
 </style>
 
 </head>
@@ -571,12 +614,257 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 
 
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Hello"></textarea>
+</div>
+
+<input class="form-control mb-2" type="text" placeholder="Disabled input" aria-label="Disabled input example" disabled>
+<input class="form-control mb-2" type="text" placeholder="Disabled readonly input" aria-label="Disabled input example" disabled readonly>
+<input class="form-control mb-4" type="text" placeholder="Readonly input here..." aria-label="readonly input example" readonly>
+
+
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword">
+    </div>
+  </div>
+
+<div class="mb-3">
+  <label for="formFile" class="form-label">Default file input example</label>
+  <input class="form-control" type="file" id="formFile">
+</div>
+<div class="mb-3">
+  <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+  <input class="form-control" type="file" id="formFileMultiple" multiple>
+</div>
+<div class="mb-3">
+  <label for="formFileDisabled" class="form-label">Disabled file input example</label>
+  <input class="form-control" type="file" id="formFileDisabled" disabled>
+</div>
+<div class="mb-3">
+  <label for="formFileSm" class="form-label">Small file input example</label>
+  <input class="form-control form-control-sm" id="formFileSm" type="file">
+</div>
+<div>
+  <label for="formFileLg" class="form-label">Large file input example</label>
+  <input class="form-control form-control-lg" id="formFileLg" type="file">
+</div>
+
+<label for="exampleColorInput" class="form-label my-4">Color picker</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+
+<label for="exampleDataList" class="form-label my-4">Datalist example</label>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+<datalist id="datalistOptions">
+  <option value="San Francisco">
+  <option value="New York">
+  <option value="Seattle">
+  <option value="Los Angeles">
+  <option value="Chicago">
+</datalist>
+
+<select class="form-select my-4" aria-label="Default select example">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Default checkbox
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+  <label class="form-check-label" for="flexCheckChecked">
+    Checked checkbox
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" disabled>
+  <label class="form-check-label" for="flexCheckCheckedDisabled">
+    Disabled checkbox
+  </label>
+</div>
+
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">
+    Default radio
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <label class="form-check-label" for="exampleRadios2">
+    Second default radio
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+  <label class="form-check-label" for="exampleRadios3">
+    Disabled radio
+  </label>
+</div>
+
+
+
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+  <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" disabled>
+  <label class="form-check-label" for="flexSwitchCheckDisabled">Disabled switch checkbox input</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+  <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Disabled checked switch checkbox input</label>
+</div>
+
+
+
+<label for="customRange1" class="form-label">Example range</label>
+<input type="range" class="form-range" id="customRange1">
+
+
+<label for="disabledRange" class="form-label">Disabled range</label>
+<input type="range" class="form-range" id="disabledRange" disabled>
+
+
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">@</span>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <span class="input-group-text" id="basic-addon2">@example.com</span>
+</div>
+
+<label for="basic-url" class="form-label">Your vanity URL</label>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text">$</span>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  <span class="input-group-text">.00</span>
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+  <span class="input-group-text">@</span>
+  <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+</div>
+
+<div class="input-group">
+  <span class="input-group-text">With textarea</span>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div>
+
+
+
+
+
+<div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput">Email address</label>
+</div>
+<div class="form-floating">
+  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+  <label for="floatingPassword">Password</label>
+</div>
+
+<form class="form-floating">
+  <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com">
+  <label for="floatingInputValue">Input with value</label>
+</form>
+
+<form class="form-floating">
+  <input type="email" class="form-control is-invalid" id="floatingInputInvalid" placeholder="name@example.com" value="test@example.com">
+  <label for="floatingInputInvalid">Invalid input</label>
+</form>
+
+
+
+<div class="form-floating">
+  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+  <label for="floatingTextarea">Comments</label>
+</div>
+
+<div class="form-floating">
+  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+  <label for="floatingTextarea2">Comments</label>
+</div>
+
+
+
+
+<div class="form-floating">
+  <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+    <option selected>Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <label for="floatingSelect">Works with selects</label>
+</div>
+
+
+
+
+<div class="row g-2">
+  <div class="col-md">
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="mdo@example.com">
+      <label for="floatingInputGrid">Email address</label>
+    </div>
+  </div>
+  <div class="col-md">
+    <div class="form-floating">
+      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <label for="floatingSelectGrid">Works with selects</label>
+    </div>
+  </div>
+</div>
+
+
+
 </div><!-- /.container -->
 
 <div class="position-fixed p-2" style="bottom:1rem;left:1rem;">
 <div class="form-check form-switch pull-right">
   <input class="form-check-input" type="checkbox" id="darkMode">
-  <label id="darkModeLabel" for="darkMode">Dark</label>
+  <label id="darkModeLabel" for="darkMode">Light</label>
 </div>
 </div>
 
@@ -593,8 +881,8 @@ $("a[href='#']").on('click', function(e) {
 var darkMode = document.getElementById('darkMode');
 
 var darkLabel = "darkModeLabel";
-var darkLang = "Light";
-var lightLang = "Dark";
+var darkLang = "Dark";
+var lightLang = "Light";
 
 var imgID = "logo";
 var darkImg = "./dark.png";
