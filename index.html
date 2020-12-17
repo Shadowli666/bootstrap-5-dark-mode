@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>DARK MODE</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+<link href="./dark.css" rel="stylesheet">
+
+<style>
+
+.disabled { cursor: not-allowed; }
+
+[data-theme="dark"] { background-color: #111 !important; color: #fff; }
+
+[data-theme="dark"] a { color: #fff; }
+[data-theme="dark"] a:hover { color: #eee; }
+
+[data-theme="dark"] .btn-link { color: #fff; }
+
+[data-theme="dark"] .btn-close { filter: invert(1) grayscale(100%) brightness(200%); }
+
+[data-theme="dark"] .text-dark { color: #fff !important; }
+
+/* BUTTONS */
+
+[data-theme="dark"] .btn-dark { color: #000; background-color: #f8f9fa; border-color: #f8f9fa; }
+[data-theme="dark"] .btn-dark:hover { color: #000; background-color: #f9fafb; border-color: #f9fafb; }
+[data-theme="dark"] .btn-check:focus + .btn-dark,
+[data-theme="dark"] .btn-dark:focus { color: #000; background-color: #f9fafb; border-color: #f9fafb; box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5); }
+[data-theme="dark"] .btn-check:checked + .btn-dark,
+[data-theme="dark"] .btn-check:active + .btn-dark,
+[data-theme="dark"] .btn-dark:active,
+[data-theme="dark"] .btn-dark.active,
+[data-theme="dark"] .show > .btn-dark.dropdown-toggle { color: #000; background-color: #f9fafb; border-color: #f9fafb; }
+[data-theme="dark"] .btn-check:checked + .btn-dark:focus,
+[data-theme="dark"] .btn-check:active + .btn-dark:focus,
+[data-theme="dark"] .btn-dark:active:focus,
+[data-theme="dark"] .btn-dark.active:focus,
+[data-theme="dark"] .show > .btn-dark.dropdown-toggle:focus { box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5); }
+[data-theme="dark"] .btn-dark:disabled,
+[data-theme="dark"] .btn-dark.disabled { color: #000; background-color: #f8f9fa; border-color: #f8f9fa; }
+
+[data-theme="dark"] .btn-light { color: #fff; background-color: #212529; border-color: #212529; }
+[data-theme="dark"] .btn-light:hover { color: #fff; background-color: #1c1f23; border-color: #1a1e21; }
+[data-theme="dark"] .btn-check:focus + .btn-light,
+[data-theme="dark"] .btn-light:focus { color: #fff; background-color: #1c1f23; border-color: #1a1e21; box-shadow: 0 0 0 0.25rem rgba(66, 70, 73, 0.5); }
+[data-theme="dark"] .btn-check:checked + .btn-light,
+[data-theme="dark"] .btn-check:active + .btn-light,
+[data-theme="dark"] .btn-light:active,
+[data-theme="dark"] .btn-light.active,
+[data-theme="dark"] .show > .btn-light.dropdown-toggle { color: #fff; background-color: #1a1e21; border-color: #191c1f; }
+[data-theme="dark"] .btn-check:checked + .btn-light:focus,
+[data-theme="dark"] .btn-check:active + .btn-light:focus,
+[data-theme="dark"] .btn-light:active:focus,
+[data-theme="dark"] .btn-light.active:focus,
+[data-theme="dark"] .show > .btn-light.dropdown-toggle:focus { box-shadow: 0 0 0 0.25rem rgba(66, 70, 73, 0.5); }
+[data-theme="dark"] .btn-light:disabled,
+[data-theme="dark"] .btn-light.disabled { color: #fff; background-color: #212529; border-color: #212529; }
+
+[data-theme="dark"] .btn-outline-dark { color: #f8f9fa; border-color: #f8f9fa; }
+[data-theme="dark"] .btn-outline-dark:hover { color: #000; background-color: #f8f9fa; border-color: #f8f9fa; }
+[data-theme="dark"] .btn-check:focus + .btn-outline-dark,
+[data-theme="dark"] .btn-outline-dark:focus { box-shadow: 0 0 0 0.25rem rgba(248, 249, 250, 0.5); }
+[data-theme="dark"] .btn-check:checked + .btn-outline-dark,
+[data-theme="dark"] .btn-check:active + .btn-outline-dark,
+[data-theme="dark"] .btn-outline-dark:active,
+[data-theme="dark"] .btn-outline-dark.active,
+[data-theme="dark"] .btn-outline-dark.dropdown-toggle.show { color: #000; background-color: #f8f9fa; border-color: #f8f9fa; }
+[data-theme="dark"] .btn-check:checked + .btn-outline-dark:focus,
+[data-theme="dark"] .btn-check:active + .btn-outline-dark:focus,
+[data-theme="dark"] .btn-outline-dark:active:focus,
+[data-theme="dark"] .btn-outline-dark.active:focus,
+[data-theme="dark"] .btn-outline-dark.dropdown-toggle.show:focus { box-shadow: 0 0 0 0.25rem rgba(248, 249, 250, 0.5); }
+[data-theme="dark"] .btn-outline-dark:disabled,
+[data-theme="dark"] .btn-outline-dark.disabled { color: #f8f9fa; background-color: transparent; }
+
+[data-theme="dark"] .btn-outline-light { color: #212529; border-color: #212529; }
+[data-theme="dark"] .btn-outline-light:hover { color: #fff; background-color: #212529; border-color: #212529; }
+[data-theme="dark"] .btn-check:focus + .btn-outline-light,
+[data-theme="dark"] .btn-outline-light:focus { box-shadow: 0 0 0 0.25rem rgba(33, 37, 41, 0.5); }
+[data-theme="dark"] .btn-check:checked + .btn-outline-light,
+[data-theme="dark"] .btn-check:active + .btn-outline-light,
+[data-theme="dark"] .btn-outline-light:active,
+[data-theme="dark"] .btn-outline-light.active,
+[data-theme="dark"] .btn-outline-light.dropdown-toggle.show { color: #fff; background-color: #212529; border-color: #212529; }
+[data-theme="dark"] .btn-check:checked + .btn-outline-light:focus,
+[data-theme="dark"] .btn-check:active + .btn-outline-light:focus,
+[data-theme="dark"] .btn-outline-light:active:focus,
+[data-theme="dark"] .btn-outline-light.active:focus,
+[data-theme="dark"] .btn-outline-light.dropdown-toggle.show:focus { box-shadow: 0 0 0 0.25rem rgba(33, 37, 41, 0.5); }
+[data-theme="dark"] .btn-outline-light:disabled,
+[data-theme="dark"] .btn-outline-light.disabled { color: #212529; background-color: transparent; }
+
+/* DROPDOWNS */
+
+[data-theme="dark"] .dropdown-menu { color: #dee2e6; background-color: #343a40; border-color: rgba(0, 0, 0, 0.15); }
+[data-theme="dark"] .dropdown-menu .dropdown-item { color: #dee2e6; }
+[data-theme="dark"] .dropdown-menu .dropdown-item:hover,
+[data-theme="dark"] .dropdown-menu .dropdown-item:focus { color: #fff; background-color: rgba(255, 255, 255, 0.15); }
+[data-theme="dark"] .dropdown-menu .dropdown-item.active,
+[data-theme="dark"] .dropdown-menu .dropdown-item:active { color: #fff; background-color: #0d6efd; }
+[data-theme="dark"] .dropdown-menu .dropdown-item.disabled,
+[data-theme="dark"] .dropdown-menu .dropdown-item:disabled { color: #adb5bd; }
+[data-theme="dark"] .dropdown-menu .dropdown-divider { border-color: rgba(0, 0, 0, 0.15); }
+[data-theme="dark"] .dropdown-menu .dropdown-item-text { color: #dee2e6; }
+[data-theme="dark"] .dropdown-menu .dropdown-header { color: #adb5bd; }
+
+/* LIST GROUPS */
+
+[data-theme="dark"] .list-group-item-action { color: #495057; }
+[data-theme="dark"] .list-group-item-action:hover,
+[data-theme="dark"] .list-group-item-action:focus { color: #495057; background-color: #f8f9fa; }
+[data-theme="dark"] .list-group-item-action:active { color: #212529; background-color: #e9ecef; }
+[data-theme="dark"] .list-group-item { background-color: #111; border: 1px solid #333; border-top: none; }
+[data-theme="dark"] .list-group-item.disabled,
+[data-theme="dark"] .list-group-item:disabled { color: #fff; background-color: #000; }
+[data-theme="dark"] .list-group-item.active { color: #fff; background-color: #0d6efd; border-color: #0d6efd; }
+
+/* TABS */
+
+[data-theme="dark"] .nav-tabs { border-bottom: 1px solid #000; }
+[data-theme="dark"] .nav-tabs .nav-link:hover,
+[data-theme="dark"].nav-tabs .nav-link:focus { border-color: #212529 #212529 #000; }
+[data-theme="dark"] .nav-tabs .nav-link.disabled { color: #333; }
+[data-theme="dark"] .nav-tabs .nav-link.active,
+[data-theme="dark"] .nav-tabs .nav-item.show .nav-link { color: #fff; background-color: #000; border-color: #212529 #212529 #000; }
+
+/* PAGINATION */
+
+[data-theme="dark"] .page-link { color: #fff; background-color: #111; border: 1px solid #333; }
+[data-theme="dark"] .page-link:hover { color: #fff; background-color: #333; border-color: #333; }
+[data-theme="dark"] .page-link:focus { color: #fff; background-color: #000; }
+[data-theme="dark"] .page-item.active .page-link { color: #fff; background-color: #0d6efd; border-color: #0d6efd; }
+[data-theme="dark"] .page-item.disabled .page-link { color: #fff; background-color: #000; border-color: #333; }
+
+/* BACKGROUNDS */
+
+[data-theme="dark"] .bg-light { background-color: #212529 !important; }
+[data-theme="dark"] .bg-dark { background-color: #f8f9fa !important; }
+[data-theme="dark"] .bg-white { background-color: #000 !important; }
+
+[data-theme="dark"] .bg-white.text-white,
+[data-theme="dark"] .bg-dark.text-white,
+[data-theme="dark"] .bg-warning.text-dark,
+[data-theme="dark"] .bg-info.text-dark { color: #212529 !important; }
+
+/* BORDERS */
+
+[data-theme="dark"] .border,
+[data-theme="dark"] .border-top,
+[data-theme="dark"] .border-end,
+[data-theme="dark"] .border-bottom,
+[data-theme="dark"] .border-start { border-color: #212529 !important; }
+
+/* BREADCRUMB */
+
+[data-theme="dark"] .breadcrumb.border { border-color: #333 !important; }
+
+/* SHADOWS */
+
+[data-theme="dark"] .shadow { box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.15) !important; }
+[data-theme="dark"] .shadow-sm { box-shadow: 0 0.125rem 0.25rem rgba(255, 255, 255, 0.075) !important; }
+[data-theme="dark"] .shadow-lg { box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.175) !important; }
+
+/* CARDS */
+
+[data-theme="dark"] .card { background-color: #000; border: 1px solid rgba(255, 255, 255, 0.125); }
+
+/* MODALS */
+
+[data-theme="dark"] .modal-content { background-color: #000; border: 1px solid rgba(255, 255, 255, 0.2); }
+[data-theme="dark"] .modal-header { border-bottom: 1px solid #212529; }
+[data-theme="dark"] .modal-footer { border-top: 1px solid #212529; }
+
+[data-theme="dark"] .modal-backdrop.show { opacity: 0.75; }
+
+/* ACCORDIONS */
+
+[data-theme="dark"] .accordion:not(.accordion-flush) { border-top: 1px solid #333; border-top-left-radius: 0.25rem !important; border-top-right-radius: 0.25rem !important; }
+[data-theme="dark"] .accordion-button { color: #fff; background-color: #000; border: 1px solid #333; border-top: none; }
+[data-theme="dark"] .accordion-button:not(.collapsed) { color: #fff; background-color: #333; }
+[data-theme="dark"] .accordion-button::after { filter: invert(1) grayscale(100%) brightness(200%); }
+[data-theme="dark"] .accordion-collapse { border: 1px solid #333; }
+
+[data-theme="dark"] .accordion-flush .accordion-button { border-right: 0; border-left: 0; border-radius: 0; }
+[data-theme="dark"] .accordion-flush .accordion-collapse { border-width: 0; }
+[data-theme="dark"] .accordion-flush .accordion-item:first-of-type .accordion-button { border-top-width: 0; border-top-left-radius: 0; border-top-right-radius: 0; }
+[data-theme="dark"] .accordion-flush .accordion-item:last-of-type .accordion-button.collapsed { border-bottom-width: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; }
+
+/* PROGRESS BARS */
+
+[data-theme="dark"] .progress { background-color: #333; }
+
+</style>
+
+</head>
+<body class="bg-light" style="padding-bottom:10rem;">
+<div class="container">
+
+<div class="row g-0 justify-content-between align-items-center shadow p-3 mb-5">
+
+<div class="col-auto">
+<img class="img-fluid" id="logo" src="dark.png">
+</div>
+
+<div class="col-auto text-end">
+<h1>Bootstrap v5.0.0-beta1 Dark Mode</h1>
+</div>
+
+</div>
+
+<p class="text-center"><a href="#0">Hyperlink</a></p>
+
+<div class="row mb-5">
+<div class="col p-3 bg-primary text-white">.bg-primary</div>
+<div class="col p-3 bg-secondary text-white">.bg-secondary</div>
+<div class="col p-3 bg-success text-white">.bg-success</div>
+<div class="col p-3 bg-danger text-white">.bg-danger</div>
+<div class="col p-3 bg-warning text-dark">.bg-warning</div>
+<div class="col p-3 bg-info text-dark">.bg-info</div>
+<div class="w-100 my-2"></div>
+<div class="col p-3 bg-light text-dark">.bg-light</div>
+<div class="col p-3 bg-dark text-white">.bg-dark</div>
+<div class="col p-3 bg-white text-dark">.bg-white</div>
+<div class="col p-3 bg-transparent">.bg-transparent</div>
+</div>
+
+
+<div class="row mb-5">
+<div class="col"><div class="alert alert-primary" role="alert">A simple primary alert</div></div>
+<div class="col"><div class="alert alert-secondary" role="alert">A simple secondary alert</div></div>
+<div class="col"><div class="alert alert-success" role="alert">A simple success alert</div></div>
+<div class="col"><div class="alert alert-danger" role="alert">A simple danger alert</div></div>
+<div class="w-100"></div>
+<div class="col"><div class="alert alert-warning" role="alert">A simple warning alert</div></div>
+<div class="col"><div class="alert alert-info" role="alert">A simple info alert</div></div>
+<div class="col"><div class="alert alert-light border" role="alert">A simple light alert</div></div>
+<div class="col"><div class="alert alert-dark" role="alert">A simple dark alert</div></div>
+</div>
+
+
+
+<nav style="--bs-breadcrumb-divider: '>';" class="mb-3">
+  <ol class="breadcrumb border bg-light rounded p-1">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+
+<nav style="--bs-breadcrumb-divider: '>';" class="mb-3">
+  <ol class="breadcrumb border bg-light rounded p-2">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Library</li>
+  </ol>
+</nav>
+
+<nav style="--bs-breadcrumb-divider: '>';" class="mb-5">
+  <ol class="breadcrumb border bg-light rounded p-3">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Library</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Data</li>
+  </ol>
+</nav>
+
+
+<div class="text-center mb-5">
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-light border">Light Border</button>
+<button type="button" class="btn btn-dark">Dark</button>
+<button type="button" class="btn btn-link">Link</button>
+</div>
+
+<div class="text-center mb-5">
+<button type="button" class="btn btn-outline-primary">Primary</button>
+<button type="button" class="btn btn-outline-secondary">Secondary</button>
+<button type="button" class="btn btn-outline-success">Success</button>
+<button type="button" class="btn btn-outline-danger">Danger</button>
+<button type="button" class="btn btn-outline-warning">Warning</button>
+<button type="button" class="btn btn-outline-info">Info</button>
+<button type="button" class="btn btn-outline-light">Light</button>
+<button type="button" class="btn btn-outline-dark">Dark</button>
+</div>
+
+<div class="text-center mb-5">
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+</div>
+
+
+<ul class="list-group mb-5">
+  <li class="list-group-item active" aria-current="true">Cras justo odio</li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item active">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item disabled">Vestibulum at eros</li>
+</ul>
+
+
+<ul class="nav justify-content-center mb-5">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
+
+
+<ul class="nav nav-pills nav-fill mb-5"">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Much longer nav link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
+
+
+
+<div class="mb-5">
+
+<ul class="nav nav-tabs justify-content-center border-0" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link h3 active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link h3" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link h3" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+  </li>
+</ul>
+
+<div class="tab-content border border rounded p-3 bg-white" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Home</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Profile</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Contact</div>
+</div>
+
+</div>
+
+
+
+
+
+<nav aria-label="Page navigation example" class="mb-5">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
+
+
+<div class="mb-5">
+
+<div class="progress mb-2">
+  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress mb-2">
+  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress mb-2">
+  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress mb-2">
+  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress mb-2">
+  <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+</div>
+
+
+
+
+<div class="shadow-sm p-3 mb-5 bg-white rounded">Small shadow</div>
+<div class="shadow p-3 mb-5 bg-white rounded">Regular shadow</div>
+<div class="shadow-lg p-3 mb-5 bg-white rounded">Larger shadow</div>
+
+
+
+
+<br>
+<div class="card p-4 mt-3 mb-4">
+CARD Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</div>
+
+
+
+<div class="modal position-static d-block mb-4" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Button trigger modal -->
+<div class="text-center mb-5">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="accordion mb-5" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="card p-4 mb-5">
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- /.container -->
+
+<div class="position-fixed p-2" style="bottom:1rem;left:1rem;">
+<div class="form-check form-switch pull-right">
+  <input class="form-check-input" type="checkbox" id="darkMode">
+  <label for="darkMode">Enabled</label>
+</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+<script>
+
+$("a[href='#']").on('click', function(e) {
+	e.preventDefault();
+});
+
+var darkMode = document.getElementById('darkMode');
+
+var imgID = "logo";
+var darkImg = "./dark.png";
+var lightImg = "./light.png";
+
+window.addEventListener('load', function () {
+  if (darkMode) {
+    initTheme();
+    darkMode.addEventListener('change', function () {
+      resetTheme();
+    });
+  }
+});
+
+function initTheme() {
+  var darkThemeSelected = localStorage.getItem('darkMode') !== null && localStorage.getItem('darkMode') === 'dark';
+  darkMode.checked = darkThemeSelected;
+  darkThemeSelected ? document.body.setAttribute('data-theme', 'dark') : document.body.removeAttribute('data-theme');
+  darkThemeSelected ? document.getElementById(imgID).src = darkImg : document.getElementById(imgID).src = lightImg;
+}
+
+function resetTheme() {
+  if (darkMode.checked) {
+    document.body.setAttribute('data-theme', 'dark');
+    localStorage.setItem('darkMode', 'dark');
+    document.getElementById(imgID).src = darkImg;
+  } else {
+    document.body.removeAttribute('data-theme');
+    localStorage.removeItem('darkMode');
+    document.getElementById(imgID).src = lightImg;
+  }
+}
+</script>
+
+</body>
+</html>
