@@ -223,6 +223,9 @@
 [data-theme="dark"] .form-floating > .form-select ~ label,
 [data-theme="dark"] .form-floating > .form-control:-webkit-autofill ~ label { opacity: 0.65; }
 
+[data-theme="dark"] .form-control.is-invalid, .was-validated .form-control:invalid { border-color: #dc3545; }
+[data-theme="dark"] .form-control.is-valid, .was-validated .form-control:valid { border-color: #198754; }
+
 </style>
 
 </head>
@@ -905,6 +908,11 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <form class="form-floating mb-3">
   <input type="email" class="form-control is-invalid" id="floatingInputInvalid" placeholder="name@example.com" value="test@example.com">
   <label for="floatingInputInvalid">Invalid input</label>
+</form>
+
+<form class="form-floating mb-3">
+  <input type="email" class="form-control is-valid" id="floatingInputValid" placeholder="name@example.com" value="test@example.com">
+  <label for="floatingInputValid">Valid input</label>
 </form>
 
 
