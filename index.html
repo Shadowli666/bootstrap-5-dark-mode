@@ -178,7 +178,7 @@
 
 /* TOASTS */
 
-[data-theme="dark"] .toast { background-color: rgba(255, 255, 255, 0.85); border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
+[data-theme="dark"] .toast { background-color: rgba(255, 255, 255, 0.85); border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.15); }
 [data-theme="dark"] .toast-header { color: #6c757d; background-color: rgba(255, 255, 255, 0.85); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
 [data-theme="dark"] .toast-header .btn-close { filter: invert(0) grayscale(0%) brightness(0%); }
 [data-theme="dark"] .toast-body { color: #000; }
@@ -210,8 +210,18 @@
 [data-theme="dark"] .input-group-text {	color: #fff; background-color: #333; border: 1px solid #333; }
 [data-theme="dark"] .form-select { color: #fff; border-color: #333 !important; background: #000 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23ffffff' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px; border: 1px solid #111; }
 [data-theme="dark"] .form-select option { color: #fff; }
-[data-theme="dark"] .form-select:disabled { color: #6c757d; background-color: #e9ecef; }
+[data-theme="dark"] .form-select:disabled { color: #666; background-color: #333; }
 [data-theme="dark"] .form-select:-moz-focusring { text-shadow: 0 0 0 #495057; }
+
+[data-theme="dark"] .form-floating > .form-control::-webkit-input-placeholder,
+[data-theme="dark"] .form-floating > .form-control::-moz-placeholder,
+[data-theme="dark"] .form-floating > .form-control::placeholder { color: transparent; }
+
+[data-theme="dark"] .form-floating > .form-control:not(:-moz-placeholder-shown) ~ label,
+[data-theme="dark"] .form-floating > .form-control:focus ~ label,
+[data-theme="dark"] .form-floating > .form-control:not(:placeholder-shown) ~ label,
+[data-theme="dark"] .form-floating > .form-select ~ label,
+[data-theme="dark"] .form-floating > .form-control:-webkit-autofill ~ label { opacity: 0.65; }
 
 </style>
 
@@ -866,7 +876,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
   <input type="text" class="form-control" placeholder="Server" aria-label="Server">
 </div>
 
-<div class="input-group">
+<div class="input-group mb-3">
   <span class="input-group-text">With textarea</span>
   <textarea class="form-control" aria-label="With textarea"></textarea>
 </div>
@@ -879,37 +889,33 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
   <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
   <label for="floatingInput">Email address</label>
 </div>
-<div class="form-floating">
+<div class="form-floating mb-3">
   <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
   <label for="floatingPassword">Password</label>
 </div>
 
-<form class="form-floating">
+
+
+
+<form class="form-floating mb-3">
   <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com">
   <label for="floatingInputValue">Input with value</label>
 </form>
 
-<form class="form-floating">
+<form class="form-floating mb-3">
   <input type="email" class="form-control is-invalid" id="floatingInputInvalid" placeholder="name@example.com" value="test@example.com">
   <label for="floatingInputInvalid">Invalid input</label>
 </form>
 
 
-
-<div class="form-floating">
-  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-  <label for="floatingTextarea">Comments</label>
-</div>
-
-<div class="form-floating">
+<div class="form-floating mb-3">
   <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
   <label for="floatingTextarea2">Comments</label>
 </div>
 
 
 
-
-<div class="form-floating">
+<div class="form-floating mb-3">
   <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
     <option selected>Open this select menu</option>
     <option value="1">One</option>
@@ -922,7 +928,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 
 
-<div class="row g-2">
+<div class="row g-2 mb-3">
   <div class="col-md">
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="mdo@example.com">
